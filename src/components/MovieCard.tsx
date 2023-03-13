@@ -1,4 +1,3 @@
-import Image from "next/image";
 import { useState } from "react";
 import { MoviesI } from "../../types/types";
 import { getDateYear } from "../../utils/formatDate";
@@ -19,11 +18,9 @@ const MovieCard: React.FC<MovieCardProps> = ({ movie }) => {
         className="flex flex-col items-center cursor-pointer"
         onClick={() => setIsModalOpen(!isModalOpen)}
       >
-        <Image
+        <img
           src={poster_path}
           alt="movie poster"
-          width={300}
-          height={0}
           className="w-full max-w-[300px] rounded-t-md"
         />
 
@@ -33,7 +30,11 @@ const MovieCard: React.FC<MovieCardProps> = ({ movie }) => {
           </p>
           <div className="text-sm text-yellow-400 truncate text-ellipsis">
             {genres.map((genre, index) => (
-              <span className="mr-3 italic" key={index}>
+              <span
+                className="mr-3 italic"
+                key={index}
+                data-testid={`genre-${index}`}
+              >
                 {genre}
               </span>
             ))}

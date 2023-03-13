@@ -1,5 +1,5 @@
 import { Dialog, Transition } from "@headlessui/react";
-import Image from "next/image";
+
 import { Dispatch, Fragment, SetStateAction } from "react";
 import { MoviesI } from "../../types/types";
 import { getDateYear } from "../../utils/formatDate";
@@ -58,11 +58,9 @@ const MovieModal: React.FC<MovieModalProps> = ({
               leaveTo="opacity-0 scale-95"
             >
               <Dialog.Panel className="w-full max-w-sm lg:max-w-lg transform overflow-hidden rounded-2xl bg-zinc-900/90 p-6 text-left align-middle shadow-xl transition-all flex flex-col items-center">
-                <Image
+                <img
                   src={poster_path}
                   alt="movie poster"
-                  width={200}
-                  height={0}
                   className="rounded-md"
                 />
 
