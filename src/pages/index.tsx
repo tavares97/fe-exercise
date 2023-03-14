@@ -1,6 +1,7 @@
 import axios from "axios";
 import React, { useCallback, useEffect, useState } from "react";
 import { BiSearchAlt } from "react-icons/bi";
+import { ImSpinner9 } from "react-icons/im";
 
 import { MoviesI } from "../../types/types";
 
@@ -78,7 +79,15 @@ export default function Home() {
         </div>
       </div>
 
-      <MovieGrid movies={movies} />
+      {movies.length === 0 ? (
+        <ImSpinner9
+          size={100}
+          color="white"
+          className="animate-spin flex justify-center w-full mt-60"
+        />
+      ) : (
+        <MovieGrid movies={movies} />
+      )}
     </div>
   );
 }
