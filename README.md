@@ -2,6 +2,7 @@
 
 You will create a simple movie search application using React and Next.js.
 
+You can test the app on this [vercel link](https://fe-exercise-gamma.vercel.app)
 
 ## Getting Started :rocket: 
 
